@@ -1,4 +1,5 @@
 class Employee
+    attr_accessor :name, :salary, :title, :boss
 
     def initialize(name, title, salary, boss = nil)
         @name = name
@@ -13,6 +14,6 @@ class Employee
 
     def boss=(boss)
         @boss = boss
-        @boss.add_employee(self)
+        @boss.add_employee(self) unless boss.nil?
     end
 end
